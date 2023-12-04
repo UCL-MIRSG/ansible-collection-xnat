@@ -1,0 +1,6 @@
+---
+- name: Install XNAT
+  ansible.builtin.import_playbook: mirsg.xnat.install_xnat
+
+- name: Install Container Service
+  ansible.builtin.import_playbook: mirsg.xnat.install_container_service

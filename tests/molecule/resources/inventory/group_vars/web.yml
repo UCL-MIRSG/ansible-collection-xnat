@@ -1,0 +1,18 @@
+---
+# mirsg.infrastructure.firewalld
+allow_public_access: true
+
+public_zone_sources:
+  - "0.0.0.0/0"
+
+internal_zone_ports:
+  - "{{ dicom_port }}"
+  - "{{ tomcat_port }}"
+
+work_zone_ports:
+  - "{{ dicom_port }}"
+  - "{{ tomcat_port }}"
+
+public_zone_ports:
+  - "{{ dicom_port }}"
+  - "{{ tomcat_port }}"
