@@ -1,0 +1,9 @@
+---
+container_service_owner: "tomcat"
+container_service_group: "tomcat"
+container_service_certificate_directory: "/usr/share/tomcat/.docker"
+container_service_key: "/usr/share/tomcat/.docker/key.pem"
+container_service_csr: "/usr/share/tomcat/.docker/docker.csr"
+container_service_pk8: "/usr/share/tomcat/.docker/docker.pk8"
+container_service_cert: "/usr/share/tomcat/.docker/cert.pem"
+container_service_server_ca_cert: "/usr/share/tomcat/.docker/ca.pem"
