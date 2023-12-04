@@ -1,0 +1,43 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["github>UCL-MIRSG/.github//renovate/default-config.json"],
+  "packageRules": [
+    {
+      "description": "Check Maven Central for updates to Tomcat 9",
+      "matchPackageNames": ["org.apache.tomcat:tomcat"],
+      "allowedVersions": "<10"
+    },
+    {
+      "description": "MIRSG Ansible roles",
+      "matchPackagePatterns": ["^mirsg"],
+      "versioning": "loose"
+    }
+  ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "description": "Update Tomcat version specfied in playbooks/group_vars/web.yml",
+      "fileMatch": ["(^|/)*web.yml$"],
+      "matchStrings": ["tomcat_version:\\s?(?<currentValue>.*?)\\n"],
+      "depNameTemplate": "org.apache.tomcat:tomcat",
+      "datasourceTemplate": "maven"
+    },
+    {
+      "customType": "regex",
+      "description": "Update XNAT version specfied in roles/xnat/defaults/main.yml",
+      "fileMatch": ["(^|/)*defaults/main.yml$"],
+      "matchStrings": ["xnat_version:\\s?(?<currentValue>.*?)\\n"],
+      "depNameTemplate": "xnatdev/xnat-web",
+      "datasourceTemplate": "bitbucket-tags",
+      "versioningTemplate": "regex:(?<major>\\d+).(?<minor>\\d+).(?<build>\\d+).(?<revision>\\d+)"
+    },
+    {
+      "customType": "regex",
+      "description": "Update XNAT pipeline version specfied in roles/xnat/defaults/main.yml",
+      "fileMatch": ["(^|/)*defaults/main.yml$"],
+      "matchStrings": ["xnat_pipeline_version:\\s?(?<currentValue>.*?)\\n"],
+      "depNameTemplate": "NrgXnat/xnat-pipeline-engine",
+      "datasourceTemplate": "github-releases"
+    }
+  ]
+}
