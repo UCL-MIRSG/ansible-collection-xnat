@@ -1,0 +1,10 @@
+---
+collections:
+  - community.general
+  - ansible.posix
+  - community.postgresql
+  - community.docker
+  - community.crypto
+  - name: https://github.com/UCL-MIRSG/ansible-collection-infra.git
+    type: git
+    version: main
