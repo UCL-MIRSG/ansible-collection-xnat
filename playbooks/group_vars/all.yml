@@ -1,0 +1,17 @@
+---
+EXTERNAL_STORAGE_DRIVE: "/storage/xnat" # noqa: var-naming[pattern]
+xnat_data_dir: "/data"
+xnat_root_dir: "{{ xnat_data_dir }}/xnat"
+xnat_home_dir: "{{ xnat_root_dir }}/home"
+
+database_server_certificate_cache_filename: "{{ ansible_cache_dir }}/pg_certificates/{{ xnat_db.host }}.pg.server.crt"
+database_client_certificate_cache_filename: "{{ ansible_cache_dir }}/pg_certificates/{{ xnat_db.host }}.pg.client.crt"
+
+postgresql_rpm_gpg_key_pgdg: "https://www.postgresql.org/download/keys/RPM-GPG-KEY-PGDG"
+
+# mirsg.infrastructure.postgresql - download and install - we need to do this on both the web server and the db
+postgresql_install:
+  disable_gpg_check: false
+  rpm: "https://download.postgresql.org/pub/repos/yum/reporpms/EL-{{ ansible_facts['distribution_major_version'] }}-x86_64/pgdg-redhat-repo-latest.noarch.rpm"
+  yum_package: "postgresql{{ postgresql_version }}-server"
+  yum_contrib_package: "postgresql{{ postgresql_version }}-contrib" # required only on CentOS 7
