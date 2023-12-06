@@ -1,4 +1,6 @@
 ---
+external_storage_drive: "/storage/xnat"
+
 # web server VM
 xnat_web_server:
   host: "{{ hostvars['xnat_web']['hostname'] }}"
