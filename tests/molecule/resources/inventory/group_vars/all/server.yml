@@ -7,7 +7,7 @@ xnat_web_server:
   url: "http://{{ hostvars['xnat_web']['hostname'] }}"
   subnet: "192.168.56.0/24"
   ip: "{{ hostvars['xnat_web']['ansible_ip'] }}"
-  storage_dir: "{{ EXTERNAL_STORAGE_DRIVE }}/data"
+  storage_dir: "{{ external_storage_drive }}/data"
 
 # database server VM
 xnat_db:
@@ -17,9 +17,9 @@ xnat_db:
   postgres_xnat_database: "xnat"
   postgres_xnat_user: "xnat"
   postgres_xnat_password: "{{ vault_postgres_xnat_password }}"
-  storage_dir: "{{ EXTERNAL_STORAGE_DRIVE }}/pgsql"
-  data_dir: "{{ EXTERNAL_STORAGE_DRIVE }}/pgsql/{{ postgresql_version }}/data"
-  backups_dir: "{{ EXTERNAL_STORAGE_DRIVE }}/pgsql/backups"
+  storage_dir: "{{ external_storage_drive }}/pgsql"
+  data_dir: "{{ external_storage_drive }}/pgsql/{{ postgresql_version }}/data"
+  backups_dir: "{{ external_storage_drive }}/pgsql/backups"
 
 # XNAT plugins
 xnat_server_specific_plugin_urls: []
