@@ -6,14 +6,14 @@
     group: "{{ xnat.group }}"
     state: directory
     mode: "0700"
-  when: xnat_create_data_directory and EXTERNAL_STORAGE_DRIVE is defined
+  when: xnat_create_data_directory and external_storage_drive is defined
 
 - name: Ensure there is a symbolic link from XNAT data directory to storage directory
   ansible.builtin.file:
     src: "{{ xnat_web_server.storage_dir }}"
     dest: "{{ xnat_data_dir }}"
     state: link
-  when: xnat_create_data_directory and EXTERNAL_STORAGE_DRIVE is defined
+  when: xnat_create_data_directory and external_storage_drive is defined
 
 - name: "Ensure XNAT subdirectories exist"
   ansible.builtin.file:
