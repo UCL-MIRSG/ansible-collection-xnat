@@ -9,6 +9,7 @@ jobs:
   molecule:
     runs-on: ubuntu-latest
     strategy:
+      max-parallel: 1
       fail-fast: true
       matrix:
         scenario:
@@ -38,3 +39,4 @@ jobs:
         run: |
           cd ansible_collections/mirsg/xnat/tests
           molecule converge --scenario-name  "${{ matrix.scenario }}"
+          molecule destroy --scenario-name  "${{ matrix.scenario }}"
