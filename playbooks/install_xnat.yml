@@ -8,7 +8,7 @@
     - role: mirsg.infrastructure.provision
     - role: mirsg.infrastructure.install_python
     - role: mirsg.infrastructure.tomcat
-    - role: nginx
+    - role: mirsg.infrastructure.nginx
     - role: mirsg.infrastructure.ssl_certificates
       vars:
         ssl_certificate: "{{ postgresql_client_ssl_certificate }}" # noqa: var-naming[no-role-prefix]
