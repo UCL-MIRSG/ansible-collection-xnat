@@ -22,6 +22,14 @@
 # XNAT initially creates a default admin account with a default password.
 # On the first run, we change the default admin password, then use this account to create a service user, and then disable the default admin account.
 
+# Some times the default admin hasn't finished creating even after tomcat has started
+# Add a delay here to give the admin account a chance to be created
+# Note, this issue only seems to happen in CI
+- name: Wait for Admin account creation
+  ansible.builtin.wait_for:
+    timeout: "{{ xnat_wait_for_tomcat | default(0) }}"
+  delegate_to: localhost
+
 # First, test if the default admin password needs to be changed.
 # To do this, first request a restricted page using the default admin credentials.
 # If this succeeds (200), this is the initial run and the password needs to be changed.
