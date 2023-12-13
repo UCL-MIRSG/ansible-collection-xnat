@@ -13,7 +13,7 @@
     src: "{{ xnat_web_server.storage_dir }}"
     dest: "{{ xnat_data_dir }}"
     state: link
-  when: xnat_create_data_directory and external_storage_drive is defined
+  when: xnat_link_data_directory and external_storage_drive is defined
 
 - name: "Ensure XNAT subdirectories exist"
   ansible.builtin.file:
