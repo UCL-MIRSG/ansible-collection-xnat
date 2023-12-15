@@ -38,6 +38,7 @@ You can also include it in a `requirements.yml` file and install it via
 collections:
   - name: mirsg.xnat
     source: https://github.com/UCL-MIRSG/ansible-collection-xnat.git
+    type: git
     version: main
 ```
 
