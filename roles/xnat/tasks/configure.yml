@@ -26,6 +26,7 @@
 # Add a delay here to give the admin account a chance to be created
 # Note, this issue only seems to happen in CI
 - name: Wait for Admin account creation
+  become: false
   ansible.builtin.wait_for:
     timeout: "{{ xnat_wait_for_tomcat | default(0) }}"
   delegate_to: localhost
