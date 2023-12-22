@@ -34,10 +34,4 @@ xnat_config_logo: "/images/logo.png" # use the default XNAT logo
 # lookup('template, 'foo.j2') | to_json
 xnat_sitewide_anonymization_script: "{{ xnat_common_config.sitewideAnonymizationScript | to_json }}"
 
-# You may want to increase the heap space if you have enough RAM available
-java_mem:
-  Xms: "512M"
-  Xmx: "1G"
-  MetaspaceSize: "100M"
-
 pipeline_engine_enabled: false
