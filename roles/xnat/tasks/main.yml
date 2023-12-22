@@ -28,7 +28,7 @@
 
 - name: "Configure LDAP for XNAT"
   ansible.builtin.include_tasks: ldap.yml
-  when: ldap.enabled
+  when: xnat_ldap_enabled
 
 - name: "XNAT site configuration"
   ansible.builtin.include_tasks: configure.yml

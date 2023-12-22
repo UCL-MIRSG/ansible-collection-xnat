@@ -26,6 +26,17 @@ xnat_smtp_password: ""
 xnat_smtp_start_tls: "false"
 xnat_smtp_ssl_trust: "*"
 
+# LDAP configuration
+xnat_ldap_enabled: false
+xnat_ldap_name: ""
+xnat_ldap_address: ""
+xnat_ldap_userdn: ""
+xnat_ldap_password: "{{ vault_ldap_password | default(omit) }}"
+xnat_ldap_base: ""
+xnat_ldap_filter: ""
+xnat_ldap_ca_cert: ""
+xnat_ldap_keystore_alias: ""
+
 # Plugins
 xnat_plugin_urls:
   - "https://api.bitbucket.org/2.0/repositories/xnatdev/xsync/downloads/xsync-plugin-all-1.5.0.jar"

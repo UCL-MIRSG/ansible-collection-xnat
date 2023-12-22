@@ -14,18 +14,6 @@ selinux_enabled: false
 java_keystore:
   keystore_pass: "{{ vault_keystore_password }}"
 
-# LDAP configuration
-ldap:
-  enabled: false
-  name: ""
-  address: ""
-  userdn: ""
-  password: "{{ vault_ldap_password }}"
-  base: ""
-  filter: ""
-  ca_cert: ""
-  keystore_alias: ""
-
 # Path to server logo file
 xnat_config_logo: "/images/logo.png" # use the default XNAT logo
 
