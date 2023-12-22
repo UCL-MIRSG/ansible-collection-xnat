@@ -9,18 +9,6 @@ nginx_diffie_helman_size_bits: 2048
 # Support for ipv6
 ipv6_enabled: false
 
-# Mail server settings
-smtp:
-  enabled: false
-  hostname: "192.168.56.101"
-  port: "2525"
-  protocol: "smtp"
-  auth: ""
-  username: ""
-  password: "{{ vault_smtp_password }}"
-  start_tls: "false"
-  ssl_trust: "*"
-
 # XNAT configuration shared between all servers
 xnat_common_config:
   admin_email: "xnatadmin@{{ hostvars['xnat_web']['hostname'] }}"

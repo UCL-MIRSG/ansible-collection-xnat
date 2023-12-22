@@ -19,16 +19,16 @@ initialized=false
 
 [notifications]
 
-smtpEnabled={{ smtp.enabled }}
-{% if smtp.enabled %}
-smtpHostname={{ smtp.hostname | default("localhost", true) }}
-smtpPort={{ smtp.port }}
-smtpProtocol={{ smtp.protocol }}
-smtpAuth={{ smtp.auth }}
-smtpUsername={{ smtp.username }}
-smtpPassword={{ smtp.password }}
-smtpStartTls={{ smtp.start_tls }}
-smtpSslTrust={{ smtp.ssl_trust }}
+smtpEnabled={{ xnat_smtp_enabled }}
+{% if xnat_smtp_enabled %}
+smtpHostname={{ xnat_smtp_hostname | default("localhost", true) }}
+smtpPort={{ xnat_smtp_port }}
+smtpProtocol={{ xnat_smtp_protocol }}
+smtpAuth={{ xnat_smtp_auth }}
+smtpUsername={{ xnat_smtp_username }}
+smtpPassword={{ xnat_smtp_password }}
+smtpStartTls={{ xnat_smtp_start_tls }}
+smtpSslTrust={{ xnat_smtp_ssl_trust }}
 
 emailPrefix={{ xnat_config.site_name }}
 {% endif %}

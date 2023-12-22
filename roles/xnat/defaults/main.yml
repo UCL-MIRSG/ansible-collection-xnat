@@ -14,3 +14,14 @@ xnat_logs_dir: "{{ xnat_home_dir }}/logs"
 xnat_work_dir: "{{ xnat_home_dir }}/work"
 xnat_create_data_directory: true
 xnat_link_data_directory: true
+
+# Mail server settings
+xnat_smtp_enabled: false
+xnat_smtp_hostname: ""
+xnat_smtp_port: "2525"
+xnat_smtp_protocol: "smtp"
+xnat_smtp_auth: ""
+xnat_smtp_username: ""
+xnat_smtp_password: ""
+xnat_smtp_start_tls: "false"
+xnat_smtp_ssl_trust: "*"
