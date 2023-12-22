@@ -21,7 +21,7 @@
 
 - name: "Add or upgrade pipeline installer"
   ansible.builtin.include_tasks: pipelines.yml
-  when: pipeline_engine_enabled
+  when: xnat_pipeline_engine_enabled
 
 - name: "Configure XNAT settings files"
   ansible.builtin.include_tasks: settings_files.yml

@@ -18,5 +18,3 @@ java_keystore:
 # defined in a string, or extracted from a template file e.g. using
 # lookup('template, 'foo.j2') | to_json
 xnat_sitewide_anonymization_script: "{{ xnat_common_config.sitewideAnonymizationScript | to_json }}"
-
-pipeline_engine_enabled: false

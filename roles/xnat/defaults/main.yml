@@ -55,3 +55,6 @@ xnat_plugin_packages: []
 
 # Path to server logo file
 xnat_config_logo: "/images/logo.png" # use the default XNAT logo
+
+# Pipeline engine
+xnat_pipeline_engine_enabled: true
