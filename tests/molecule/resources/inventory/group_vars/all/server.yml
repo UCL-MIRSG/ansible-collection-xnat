@@ -40,9 +40,5 @@ xnat_config:
   site_description: "<h1>MIRSG XNAT</h1><p>A test instance of XNAT."
   admin_password: "{{ vault_admin_password }}"
 
-# Configuration for XNAT Container Service
-container_service_enabled: false
-container_service_remote_xnat_root: ""
-
 # Configuration for montoring service
 monitoring_service_enabled: false
