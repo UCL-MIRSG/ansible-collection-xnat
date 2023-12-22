@@ -52,3 +52,6 @@ xnat_plugin_urls:
 
 xnat_plugin_bundle_urls: []
 xnat_plugin_packages: []
+
+# Path to server logo file
+xnat_config_logo: "/images/logo.png" # use the default XNAT logo

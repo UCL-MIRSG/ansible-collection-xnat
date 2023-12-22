@@ -14,9 +14,6 @@ selinux_enabled: false
 java_keystore:
   keystore_pass: "{{ vault_keystore_password }}"
 
-# Path to server logo file
-xnat_config_logo: "/images/logo.png" # use the default XNAT logo
-
 # JSON representation of the site-wide anonymisation script: this could be
 # defined in a string, or extracted from a template file e.g. using
 # lookup('template, 'foo.j2') | to_json
