@@ -22,7 +22,7 @@ xnat_smtp_port: "2525"
 xnat_smtp_protocol: "smtp"
 xnat_smtp_auth: ""
 xnat_smtp_username: ""
-xnat_smtp_password: ""
+xnat_smtp_password: "{{ vault_smtp_password | default(omit) }}"
 xnat_smtp_start_tls: "false"
 xnat_smtp_ssl_trust: "*"
 
