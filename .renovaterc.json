@@ -33,6 +33,87 @@
     },
     {
       "customType": "regex",
+      "description": "Update XNAT-sync plugin version specfied in roles/xnat/defaults/main.yml",
+      "fileMatch": ["roles/xnat/defaults/main.yml$"],
+      "matchStrings": ["xsync-plugin-all-(?<currentValue>.*?).jar"],
+      "depNameTemplate": "xnatdev/xsync",
+      "datasourceTemplate": "bitbucket-tags"
+    },
+    {
+      "customType": "regex",
+      "description": "Update XNAT ldap-auth plugin version specfied in roles/xnat/defaults/main.yml",
+      "fileMatch": ["roles/xnat/defaults/main.yml$"],
+      "matchStrings": ["ldap-auth-plugin-(?<currentValue>.*?).jar"],
+      "depNameTemplate": "xnatx/ldap-auth-plugin",
+      "datasourceTemplate": "bitbucket-tags"
+    },
+    {
+      "customType": "regex",
+      "description": "Update XNAT Container Service plugin version specfied in roles/xnat/defaults/main.yml",
+      "fileMatch": ["roles/xnat/defaults/main.yml$"],
+      "matchStrings": ["container-service-(?<currentValue>.*?)-fat.jar"],
+      "depNameTemplate": "xnatdev/container-service",
+      "datasourceTemplate": "bitbucket-tags"
+    },
+    {
+      "customType": "regex",
+      "description": "Update XNAT batch launch plugin version specfied in roles/xnat/defaults/main.yml",
+      "fileMatch": ["roles/xnat/defaults/main.yml$"],
+      "matchStrings": ["batch-launch-(?<currentValue>.*?).jar"],
+      "depNameTemplate": "xnatx/xnatx-batch-launch-plugin",
+      "datasourceTemplate": "bitbucket-tags"
+    },
+    {
+      "customType": "regex",
+      "description": "Update XNAT dax plugin specfied in roles/xnat/defaults/main.yml",
+      "fileMatch": ["roles/xnat/defaults/main.yml$"],
+      "matchStrings": ["dax-plugin-genProcData-(?<currentValue>.*?).jar"],
+      "depNameTemplate": "VUIIS/dax",
+      "datasourceTemplate": "github-releases"
+    },
+    {
+      "customType": "regex",
+      "description": "Update OHIF Viewer plugin version specfied in roles/xnat/defaults/main.yml",
+      "fileMatch": ["roles/xnat/defaults/main.yml$"],
+      "matchStrings": ["ohif-viewer-(?<currentValue>.*?).jar"],
+      "depNameTemplate": "icrimaginginformatics/ohif-viewer-xnat-plugin",
+      "datasourceTemplate": "bitbucket-tags"
+    },
+    {
+      "customType": "regex",
+      "description": "Update XNAT ML plugin version specfied in roles/xnat/defaults/main.yml",
+      "fileMatch": ["roles/xnat/defaults/main.yml$"],
+      "matchStrings": ["ml-plugin-(?<currentValue>.*?).jar"],
+      "depNameTemplate": "xnatx/ml-plugin",
+      "datasourceTemplate": "bitbucket-tags"
+    },
+    {
+      "customType": "regex",
+      "description": "Update XNAT datasets plugin version specfied in roles/xnat/defaults/main.yml",
+      "fileMatch": ["roles/xnat/defaults/main.yml$"],
+      "matchStrings": ["datasets-plugin-(?<currentValue>.*?).jar"],
+      "depNameTemplate": "xnatx/datasets-plugin",
+      "datasourceTemplate": "bitbucket-tags"
+    },
+    {
+      "customType": "regex",
+      "description": "Update XNAT image viewer plugin version specfied in roles/xnat/defaults/main.yml",
+      "fileMatch": ["roles/xnat/defaults/main.yml$"],
+      "matchStrings": ["ximgview-plugin(?<currentValue>.*?).jar"],
+      "depNameTemplate": "xnatdev/xnat-image-viewer-plugin",
+      "datasourceTemplate": "bitbucket-tags"
+    },
+    {
+      "customType": "regex",
+      "description": "Update XNAT dxm plugin version specfied in roles/xnat/defaults/main.yml",
+      "fileMatch": ["roles/xnat/defaults/main.yml$"],
+      "matchStrings": ["dxm-settings-plugin-(?<currentValue>.*?).jar"],
+      "depNameTemplate": "xnatx/xnatx-dxm-settings-plugin",
+      "datasourceTemplate": "bitbucket-tags",
+      "versioningTemplate": "regex:(?<major>\\d+).(?<minor>\\d+)"
+    },
+    {
+      "customType": "regex",
       "description": "Update XNAT pipeline version specfied in roles/xnat/defaults/main.yml",
       "fileMatch": ["(^|/)*defaults/main.yml$"],
       "matchStrings": ["xnat_pipeline_version:\\s?(?<currentValue>.*?)\\n"],
