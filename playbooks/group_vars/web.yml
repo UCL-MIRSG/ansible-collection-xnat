@@ -27,9 +27,9 @@ tomcat_root_webapp: "{{ tomcat_root }}.war"
 tomcat_catalina_home: /usr/share/tomcat
 tomcat_catalina_opts: >-
   -Dxnat.home={{ xnat_home_dir }}
-  -Xms{{ java_mem.Xms }}
-  -Xmx{{ java_mem.Xmx }}
-  -XX:MetaspaceSize={{ java_mem.MetaspaceSize }}
+  -Xms{{ java_mem.Xms | default("512M") }}
+  -Xmx{{ java_mem.Xmx | default("1G") }}
+  -XX:MetaspaceSize={{ java_mem.MetaspaceSize | default("100M") }}
   -XX:+UseG1GC
   -server
 

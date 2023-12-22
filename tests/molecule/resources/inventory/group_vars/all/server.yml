@@ -21,10 +21,6 @@ xnat_db:
   data_dir: "{{ external_storage_drive }}/pgsql/{{ postgresql_version }}/data"
   backups_dir: "{{ external_storage_drive }}/pgsql/backups"
 
-# XNAT plugins
-xnat_server_specific_plugin_urls: []
-xnat_server_specific_plugin_packages: []
-
 # SSL certificate settings
 ssl:
   use_ssl: false
@@ -39,10 +35,6 @@ xnat_config:
   site_name: "MIRSG XNAT"
   site_description: "<h1>MIRSG XNAT</h1><p>A test instance of XNAT."
   admin_password: "{{ vault_admin_password }}"
-
-# Configuration for XNAT Container Service
-container_service_enabled: false
-container_service_remote_xnat_root: ""
 
 # Configuration for montoring service
 monitoring_service_enabled: false

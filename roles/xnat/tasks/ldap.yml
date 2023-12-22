@@ -12,7 +12,7 @@
 
 - name: Copy ldap server certificate to client
   ansible.builtin.copy:
-    src: "{{ ldap.ca_cert }}"
+    src: "{{ xnat_ldap_ca_cert }}"
     dest: "{{ ldap_ca_cert_file_on_client }}"
     owner: "{{ xnat.owner }}"
     group: "{{ xnat.group }}"
@@ -41,7 +41,7 @@
     cert_path: "{{ ldap_ca_cert_file_on_client }}"
     keystore_path: "{{ java.keystore_path }}"
     keystore_pass: "{{ java_keystore.keystore_pass }}"
-    cert_alias: "{{ ldap.keystore_alias }}"
+    cert_alias: "{{ xnat_ldap_keystore_alias }}"
     keystore_create: true
     state: present
   notify: Restart tomcat

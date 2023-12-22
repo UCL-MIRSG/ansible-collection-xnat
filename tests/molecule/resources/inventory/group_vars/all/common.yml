@@ -1,20 +1,5 @@
 ---
 # xnat
-xnat_plugin_urls:
-  - "https://api.bitbucket.org/2.0/repositories/xnatdev/xsync/downloads/xsync-plugin-all-1.5.0.jar"
-  - "https://api.bitbucket.org/2.0/repositories/xnatx/ldap-auth-plugin/downloads/ldap-auth-plugin-1.1.0.jar"
-  - "https://api.bitbucket.org/2.0/repositories/xnatdev/container-service/downloads/container-service-3.3.0-fat.jar"
-  - "https://api.bitbucket.org/2.0/repositories/xnatx/xnatx-batch-launch-plugin/downloads/batch-launch-0.6.0.jar"
-  - "https://github.com/VUIIS/dax/raw/main/misc/xnat-plugins/dax-plugin-genProcData-1.4.2.jar"
-  - "https://api.bitbucket.org/2.0/repositories/icrimaginginformatics/ohif-viewer-xnat-plugin/downloads/ohif-viewer-3.4.1.jar"
-  - "https://api.bitbucket.org/2.0/repositories/xnatx/ml-plugin/downloads/ml-plugin-1.0.2.jar"
-  - "https://api.bitbucket.org/2.0/repositories/xnatx/datasets-plugin/downloads/datasets-plugin-1.0.2.jar"
-  - "https://api.bitbucket.org/2.0/repositories/xnatdev/xnat-image-viewer-plugin/downloads/ximgview-plugin-1.0.2.jar"
-  - "https://api.bitbucket.org/2.0/repositories/xnatx/xnatx-dxm-settings-plugin/downloads/dxm-settings-plugin-1.0.jar"
-
-xnat_plugin_bundle_urls: []
-xnat_plugin_packages: []
-
 package_registry:
   enabled: false
   url: ""
@@ -32,30 +17,7 @@ postgresql_version: "12"
 java_keystore:
   keystore_pass: "{{ vault_keystore_password }}"
 
-# LDAP configuration
-ldap:
-  enabled: false
-  name: ""
-  address: ""
-  userdn: ""
-  password: "{{ vault_ldap_password }}"
-  base: ""
-  filter: ""
-  ca_cert: ""
-  keystore_alias: ""
-
-# Path to server logo file
-xnat_config_logo: "/images/logo.png" # use the default XNAT logo
-
 # JSON representation of the site-wide anonymisation script: this could be
 # defined in a string, or extracted from a template file e.g. using
 # lookup('template, 'foo.j2') | to_json
 xnat_sitewide_anonymization_script: "{{ xnat_common_config.sitewideAnonymizationScript | to_json }}"
-
-# You may want to increase the heap space if you have enough RAM available
-java_mem:
-  Xms: "512M"
-  Xmx: "1G"
-  MetaspaceSize: "100M"
-
-pipeline_engine_enabled: false
