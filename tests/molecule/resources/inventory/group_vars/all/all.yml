@@ -4,7 +4,7 @@
 # generation. Use 4096 for production. These may take 10mins+ to generate but
 # are only generated once per server.
 # For local testing (non-production), use 2096 to speed up deployment.
-nginx_diffie_helman_size_bits: 2048
+diffie_helman_size_bits: 2048
 
 # Support for ipv6
 ipv6_enabled: false
