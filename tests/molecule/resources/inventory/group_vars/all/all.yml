@@ -9,9 +9,6 @@ diffie_helman_size_bits: 2048
 # Support for ipv6
 ipv6_enabled: false
 
-# Locale for the servers
-server_locale: "en_GB.UTF-8"
-
 # Mail server settings
 smtp:
   enabled: false
