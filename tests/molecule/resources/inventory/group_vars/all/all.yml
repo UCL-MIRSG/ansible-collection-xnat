@@ -1,13 +1,4 @@
 ---
-# Directory on the control node where the Ansible scripts can store files that
-# need to be temporarily cached, such as certificate files that are copied
-# between hosts.
-# You can persist these files between runs to speed up future deployments.
-# In a CI setup, it is best to choose a location that is not within the
-# repository clone, as the files that are created could interfere with the CI's
-# automated checkout and update processes
-ansible_cache_dir: "{{ lookup('env', 'HOME') }}/ansible_persistent_files"
-
 # Bit size for OpenSSL Diffie-Hellman Parameters. Higher bit sizes are more
 # secure, but require exponentially larger times for the one-off parameter
 # generation. Use 4096 for production. These may take 10mins+ to generate but
