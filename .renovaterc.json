@@ -13,6 +13,14 @@
       "versioning": "loose"
     }
   ],
+  "customDatasources": {
+    "VUIIS-dax": {
+      "defaultRegistryUrlTemplate": "https://api.github.com/repos/VUIIS/dax/contents/misc/xnat-plugins",
+      "transformTemplates": [
+        "{\"releases\": $.{\"version\": $join([\"v\", $match(name, /(\\d+\\.)?(\\d+\\.)?(\\*|\\d+)/ ).match ])}}"
+      ]
+    }
+  },
   "customManagers": [
     {
       "customType": "regex",
@@ -69,7 +77,7 @@
       "fileMatch": ["roles/xnat/defaults/main.yml$"],
       "matchStrings": ["dax-plugin-genProcData-(?<currentValue>.*?).jar"],
       "depNameTemplate": "VUIIS/dax",
-      "datasourceTemplate": "github-releases"
+      "datasourceTemplate": "custom.VUIIS-dax"
     },
     {
       "customType": "regex",
