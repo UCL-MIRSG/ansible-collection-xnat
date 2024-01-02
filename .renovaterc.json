@@ -6,11 +6,6 @@
       "description": "Check Maven Central for updates to Tomcat 9",
       "matchPackageNames": ["org.apache.tomcat:tomcat"],
       "allowedVersions": "<10"
-    },
-    {
-      "description": "MIRSG Ansible roles",
-      "matchPackagePatterns": ["^mirsg"],
-      "versioning": "loose"
     }
   ],
   "customDatasources": {
