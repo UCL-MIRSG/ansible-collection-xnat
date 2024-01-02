@@ -6,6 +6,23 @@
       "description": "Check Maven Central for updates to Tomcat 9",
       "matchPackageNames": ["org.apache.tomcat:tomcat"],
       "allowedVersions": "<10"
+    },
+    {
+      "matchPackageNames": [
+        "xnatdev/xnat-web",
+        "xnatdev/xsync",
+        "xnatx/ldap-auth-plugin",
+        "xnatdev/container-service",
+        "xnatx/xnatx-batch-launch-plugin",
+        "VUIIS/dax",
+        "icrimaginginformatics/ohif-viewer-xnat-plugin",
+        "xnatx/ml-plugin",
+        "xnatx/datasets-plugin",
+        "xnatdev/xnat-image-viewer-plugin",
+        "xnatx/xnatx-dxm-settings-plugin",
+        "NrgXnat/xnat-pipeline-engine"
+      ],
+      "groupName": "xnat"
     }
   ],
   "customDatasources": {
