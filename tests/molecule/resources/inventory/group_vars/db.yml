@@ -1,7 +1,7 @@
 ---
 # mirsg.infrastructure.firewalld
-internal_zone_sources:
+firewalld_internal_zone_sources:
   - "{{ xnat_web_server.subnet | default(xnat_web_server.ip + '/32') }}"
 
-internal_zone_open_services:
+firewalld_internal_zone_open_services:
   - "postgresql"
