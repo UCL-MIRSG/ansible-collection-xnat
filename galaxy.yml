@@ -16,7 +16,6 @@ readme: README.md
 # A list of the collection's content authors. Can be just the name or in the format 'Full Name <email> (url)
 # @nicks:irc/im.site#channel'
 authors:
-  - Daniel Matthews <d.matthews@ucl.ac.uk>
   - MIRSG (github.com/UCL-MIRSG)
 
 ### OPTIONAL but strongly recommended
@@ -48,10 +47,10 @@ dependencies:
   "community.crypto": ">=2.14.1"
 
 # The URL of the originating SCM repository
-repository: https://github.com/UCL-MIRSG/ansible-collection-xnatinstaller
+repository: https://github.com/UCL-MIRSG/ansible-collection-xnat
 
 # The URL to the collection issue tracker
-issues: https://github.com/UCL-MIRSG/ansible-collection-xnatinstaller/issues
+issues: https://github.com/UCL-MIRSG/ansible-collection-xnat/issues
 
 # A list of file glob-like patterns used to filter any files or directories that should not be included in the build
 # artifact. A pattern is matched from the relative path of the file or directory of the collection directory. This
